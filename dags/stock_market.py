@@ -22,9 +22,16 @@ def stock_market(): # dag_id = stock_market
     def is_api_available() -> PokeReturnValue:
         api = BaseHook.get_connection('stock_api')
         url = f"{api.host}{api.extra_dejson['endpoint']}"
-        response = requests.get(url, headers=api.extra_dejson['headers'])
-        condition = response.json()['finance']['result'] is None
-        return PokeReturnValue(is_done=condition, xcom_value=url)
+        headers = api.extra_dejson.get('headers')
+        if not headers:
+            raise ValueError("Headers not found in the connection's extra field")
+
+        try:
+            response = requests.get(url, headers=headers)
+            condition = response.json()['finance']['result'] is None
+            return PokeReturnValue(is_done=condition, xcom_value=url)
+        except requests.exceptions.RequestException as e:
+            raise Exception(f"Error fetching stock prices: {e}")
 
     get_stock_prices = PythonOperator(
         task_id='get_stock_price',
