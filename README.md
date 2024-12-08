@@ -1,6 +1,6 @@
 # Stock Market Data Pipeline Project
 
-This repository showcases an end-to-end data pipeline built using **Apache Airflow**, **Apache Spark**, and **Metabase**. The pipeline is designed to fetch, process, and load stock market data into a data warehouse, providing insightful dashboards in Metabase.
+This repository showcases an end-to-end data pipeline built using **Apache Airflow**, **Docker**, **Apache Spark**, and **Metabase**. The pipeline is designed to fetch, process, and load stock market data into a data warehouse, providing insightful dashboards in Metabase.
 
 ## Overview
 
@@ -12,6 +12,7 @@ The pipeline automates the following steps:
 4. Loads the formatted data into a PostgreSQL database (data warehouse).
 5. Visualizes the processed data in **Metabase dashboards**.
 
+![Pipeline](project_architecture_and_result/stock_market.png)
 ---
 
 ## Pipeline Steps
