@@ -10,4 +10,4 @@ webserver_config.py
 airflow.cfg
 airflow.db
 include/
-include\ copy/
+include_copy/
