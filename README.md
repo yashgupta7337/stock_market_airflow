@@ -35,7 +35,14 @@ The Astronomer CLI simplifies local development and management of Airflow projec
   ```bash
   astro dev restart
   ```
-- **Login to Airflow's CLI:**:
+- **Login to the local Airflow CLI environment:**:
   ```bash
   astro dev bash
+  ```
+
+## Airflow CLI Commands
+
+- **Test a specific Task of a DAG:**:
+  ```bash
+  airflow tasks test [dag_id] [task_id] [date]
   ```
