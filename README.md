@@ -62,7 +62,7 @@ The **Metabase dashboard** visualizes the stock market data, providing insights 
 
 ## Prerequisites
 
-- [Astronomer CLI](https://docs.astronomer.io/astro-cli) installed.
+- [Astronomer CLI](https://www.astronomer.io/docs/astro/) installed.
 - Docker installed and running.
 - PostgreSQL, MinIO, and Metabase running in Docker.
 
